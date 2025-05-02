@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- Scrollable content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- 🔐 Login/Logout toggle -->
+            <TextView
+                android:id="@+id/loginLogoutText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textStyle="bold"
+                android:textColor="@color/purple_500"
+                android:textSize="14sp"
+                android:layout_gravity="end"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp" />
+
+
+            <!-- 👤 Profile Image -->
+            <ImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_profile_placeholder"
+                android:background="@drawable/circle_background"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:text="Full Name"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- Name -->
+            <EditText android:id="@+id/nameInput" android:hint="Full Name" style="@style/ProfileItem" android:enabled="false"/>
+
+
+            <TextView
+                android:text="Job Title"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- Title -->
+            <EditText android:id="@+id/titleInput" android:hint="Job title" style="@style/ProfileItem" android:enabled="false"/>
+
+
+            <!-- About Me -->
+            <TextView
+                android:text="About Me"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/aboutInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg"
+                android:padding="16dp"
+                android:enabled="false"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:inputType="textMultiLine"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Contact -->
+            <TextView
+                android:text="Contact Information"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <EditText android:id="@+id/emailInput" android:hint="Email" style="@style/ProfileItem" android:enabled="false"/>
+                <EditText android:id="@+id/phoneInput" android:hint="Phone" style="@style/ProfileItem" android:enabled="false"/>
+                <EditText android:id="@+id/locationInput" android:hint="Location" style="@style/ProfileItem" android:enabled="false"/>
+            </LinearLayout>
+
+            <!-- Skills -->
+            <TextView
+                android:text="Skills and Experience"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText android:id="@+id/skillsInput" android:hint="e.g. Kotlin, UI/UX" style="@style/ProfileItem" android:enabled="false"/>
+            <EditText android:id="@+id/experienceInput" android:hint="Experience (e.g. 3+ years)" style="@style/ProfileItem" android:enabled="false"/>
+            <EditText android:id="@+id/jobTypeInput" android:hint="Preferred Job Type" style="@style/ProfileItem" android:enabled="false"/>
+            <EditText android:id="@+id/salaryInput" android:hint="Expected Salary" style="@style/ProfileItem" android:enabled="false"/>
+
+            <!-- Resume Upload -->
+            <Button
+                android:id="@+id/uploadResumeBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Upload Resume"
+                android:enabled="false"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/purple_500"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/resumeFileText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No resume selected"
+                android:layout_marginBottom="16dp"
+                android:textColor="#777777" />
+
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/saveProfileBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Profile"
+                android:enabled="false"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/purple_500"
+                android:textColor="@android:color/white"/>
+
+            <!-- ✏️ Edit -->
+            <Button
+                android:id="@+id/editToggleBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:layout_gravity="end"
+                android:backgroundTint="@color/purple_500"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="12dp" />
+
+
+            <!-- Spacer -->
+            <View android:layout_width="match_parent" android:layout_height="90dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Nav -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/selector_nav_color"
+        app:itemTextColor="@color/selector_nav_color"
+        android:elevation="8dp" />
+</LinearLayout>
